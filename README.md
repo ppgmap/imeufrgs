@@ -1,7 +1,7 @@
 * Apresentação do conteúdo
 
 Estes arquivos compõem o pacote de estilos LaTeX de documentos para o
-Instituto de Matemática da Universidade Federal do Rio Grande do Sul
+Instituto de Matemática e Estatística da Universidade Federal do Rio Grande do Sul
 (IME/UFRGS). Várias classes de documentos são disponibilizadas, como
 por exemplo:
 
