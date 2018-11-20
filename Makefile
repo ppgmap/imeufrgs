@@ -29,7 +29,7 @@ all:
 install:
 	install -d $(INPUTS) $(DOC) $(BIB)
 	cp -R inputs/* $(INPUTS)
-	cp README.org COPYING $(DOC)
+	cp README.md COPYING $(DOC)
 	@echo
 	@echo "Arquivos instalados com sucesso em $(INSTALLDIR)."
 	@echo
