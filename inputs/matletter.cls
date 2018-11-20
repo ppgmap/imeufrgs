@@ -1,45 +1,58 @@
+%matletter.cls - letter class for mat/ufrgs
+%copyright 2015 diego eckhard diegoeck@ufrgs.br
+
+%adapted form
+% deletter.cls - Letter class  for DELET/EE/UFRGS
+% Copyright (C) 2004..2009 Walter Fetter Lages <w.fetter@ieee.org>
 %
+% This class was adapted from:
 % iiletter.cls - modelo de carta com logotipo do II/UFRGS
-% $Id: iiletter.cls,v 1.1.1.1 2005/01/18 23:54:47 avila Exp $
-%
-% UFRGS TeX Users Group
-% Institute of Informatics --- UFRGS
-% Porto Alegre, Brazil
-% http://www.inf.ufrgs.br/utug
-% Discussion list: utug-l@inf.ufrgs.br
-%
+% $Id: iiletter.cls,v 4.1 2002/12/07 17:20:09 utug Exp $
 % Copyright (C) 2001 UFRGS TeX Users Group
+%
 % This is free software, distributed under the GNU GPL; please take
-% a look in `iiufrgs.cls' to see complete information on using, copying
+% a look in `deletex.cls' to see complete information on using, copying
 % and redistributing these files
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{iiletter}
-
-\DeclareOption{variilogo}{
-	\gdef\ime@variilogo{1}
-}
+\ProvidesClass{matletter}[2009/08/05 v1.4.0 DeleTeX package - matletter.cls - Letter Documents for UFRGS]
+\DeclareOption{english}{\@englishtrue\OptionNotUsed}\newif\if@english
+\DeclareOption{promo}{\@promotrue\OptionNotUsed}\newif\if@promo
+\DeclareOption{spf}{\@spftrue\OptionNotUsed}\newif\if@spf
+\DeclareOption{mat}{\@mattrue\OptionNotUsed}\newif\if@mat
 \DeclareOption*{
 	\PassOptionsToClass{\CurrentOption}{letter}
 }
 \ProcessOptions\relax
 \LoadClass[a4paper,12pt]{letter}
-\RequirePackage[brazilian]{babel}
-\RequirePackage{graphicx}
-    \RequirePackage{keyval}
-\RequirePackage{fixltx2e}
-\RequirePackage{epstopdf}
-\RequirePackage{iidefs}
-
+\RequirePackage[english,brazilian]{babel}
+\input{brazilian.babel}
+\input{english.babel}
+\selectlanguage{brazilian}
+\if@english
+	\selectlanguage{english}
+        \AtBeginDocument{\selectlanguage{english}}
+\fi
+\RequirePackage{matexdefs}
 %
 % definicoes padrao
 %
-\date{Porto~Alegre, \today}
+\date{Porto~Alegre, \today.}
 \newcommand{\estilorodape}{\scriptsize\sffamily\bfseries}
+\newcommand{\estilospf}{\sffamily\bfseries}
 \address{
-	{\ime} --- {\ufrgs}\\
-	Av.~Bento Gon{\c{c}}alves, 9500 Bloco~IV --- Cx.~Postal 15064 --- 91501-970 Porto~Alegre\\
-	Phone: +55 51 3316-6165\hspace{2em}Fax: +55 51 3316-7308\hspace{2em}http://www.inf.ufrgs.br
+	\if@spf
+		\ufrgs\\
+		\ime\ --- \dmpa\\
+	\fi
+	Av. Bento Gon\c{c}alves, 9500 --- 91509-900,  Porto~Alegre, RS --- %
+	\if@english %
+		BRAZIL
+	\else %
+		Brasil
+	\fi %
+	\\
+	\phonename: \telefone\hspace{2em}\site
 }
 
 %
@@ -47,10 +60,25 @@
 %
 \def\linha{\rule[1ex]{\textwidth}{2pt}}
 \def\cabecalho{
-	\parbox[b]{\textwidth}{\imelogo\\\linha}
-}
-\def\varcabecalho{
-	\makebox[\textwidth]{\variilogo[1.2]}
+	\if@spf
+		\parbox[b]{\textwidth}{\center\spfshield[0.14]\\\estilospf\spf}
+	\else
+		\parbox[b]{\textwidth}{
+		\if@promo
+			\ufrgslogo[0.4]
+		\else
+			\ufrgsshield[0.2]
+		\fi
+		\if@mat
+			\hfill\parbox[b]{0.7\textwidth}{\center\bf\ufrgs\\\ime\\\dmpa}\hfill
+			\imlogo[0.33]
+		\else
+			\hfill\parbox[b]{0.7\textwidth}{\center\bf\ufrgs\\\ee\\\delet}\hfill
+			\eelogo[0.33]
+		\fi
+		\\\linha}
+
+	\fi
 }
 \def\rodape{\parbox[b]{\textwidth}{
 	\linha\\
@@ -60,16 +88,16 @@
 %
 % definicao do estilo de pagina (cabecalho e rodape)
 %
-\def\ps@iiletter{
+\def\ps@deletter{
 	\let\@evenfoot\@empty
 	\let\@evenhead\@empty
-	\def\@oddhead{\@ifundefined{ii@variilogo}{\cabecalho}{\varcabecalho}}
+	\def\@oddhead{\cabecalho}
 	\def\@oddfoot{\rodape}
 }
-\pagestyle{iiletter}
-\let\ps@empty\ps@iiletter
-\let\ps@firstpage\ps@iiletter
-\let\ps@headings\ps@iiletter
+\pagestyle{deletter}
+\let\ps@empty\ps@deletter
+\let\ps@firstpage\ps@deletter
+\let\ps@headings\ps@deletter
 
 %
 % margens e etc

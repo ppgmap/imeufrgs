@@ -10,14 +10,9 @@
 % a look in `iiufrgs.cls' to see complete information on using, copying
 % and redistributing these files
 %
-\ProvidesFile{rp.def}[2003/03/12 Relatório de Pesquisa]
-\newcommand{\rp}[1]{\gdef\ime@rp{#1}}
-\newcommand{\financ}[1]{\gdef\ime@financ{#1}}
-\newcommand{\titlepagespecificinfo}{%
-	\rpname\\
-	RP-\ime@rp\\
-	\@ifundefined{ii@financ}{}{
-		\vspace{4ex}
-		\financname: \ime@financ
-	}%
-}
+\ProvidesFile{ppgmap.def}[2014/04/12 Definições para o PPGMAp]
+\providecommand{\nominataCoord}{\nominataCoordPPGMAp}
+\providecommand{\nominataCoordname}{\nominataCoordnamePPGMAp}
+\providecommand{\nomeDoProgramaPG}{PPGMAp}
+\providecommand{\titulacaoEm}{\ppgmapTitulacaoEm}
+\course{\ppgmap}

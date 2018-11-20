@@ -1,0 +1,146 @@
+% matexdefs.sty - pacote com definicoes do IME/UFRGS
+% Copyright (C) 2016 Diego Eckhard <diegoeck@ufrgs.br>
+%
+% deletdefs.sty - pacote com definicoes do DELET/EE/UFRGS
+% Copyright (C) 2004..2009 Walter Fetter Lages <w.fetter@ieee.org>
+%
+% This file was adapted from:
+% $Id: iidefs.sty,v 4.3 2003/11/21 22:36:13 avila Exp $
+% Copyright (C) 2001,2003 UFRGS TeX Users Group
+%
+% This is free software, distributed under the GNU GPL; please take
+% a look in `matex.cls' to see complete information on using, copying
+% and redistributing these files
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{matexdefs}[2016/12/21 v1.0.0 matexdef - Definitions for IME/UFRGS]
+\RequirePackage{graphicx}
+
+%
+% definicoes de nomes
+%
+\def\spf{Servi{\c{c}}o P{\'u}blico Federal}
+\def\ufrgs{Universidade Federal do Rio Grande do Sul}
+\def\ee{Escola de Engenharia}
+\def\ime{Instituto de Matem\'{a}tica e Estat\'{i}stica}
+
+\def\telefone{+55 51 3308 6225}
+\def\site{https://www.ufrgs.br/ime/}
+
+
+\def\delet{Departamento de Engenharia El{\'e}trica}
+\def\dmpa{Departamento de Matem\'{a}tica Pura e Aplicada}
+
+\def\ppgee{Programa de P{\'o}s-Gradua{\c{c}}{\~a}o em Engenharia El{\'e}trica}
+
+\def\ppgmap{Programa de P{\'o}s-Gradua{\c{c}}{\~a}o em Matem\'{a}tica Aplicada}
+
+
+\def\ceai{Curso de Especializa\c{c}\~ao em Automa{\c{c}}\~ao Industrial}
+\def\cgele{Curso de Gradua{\c{c}}{\~a}o em Engenharia El{\'e}trica}
+\def\cgecp{Curso de Gradua{\c{c}}{\~a}o em Engenharia de Computa{\c{c}}{\~a}o}
+\def\cgeca{Curso de Gradua{\c{c}}{\~a}o em Engenharia de Controle e Automa{\c{c}}{\~a}o}
+
+\def\eng04497{Relat{\'o}rio de Est{\'a}gio Supervisionado}
+\def\ca{Controle e Automa{\c{c}}{\~a}o}
+\def\tic{Tecnologia de Informa{\c{c}}{\~a}o e Comunica{\c{c}}{\~a}o}
+\def\se{Sistemas de Energia}
+
+
+
+\DeclareRobustCommand{\DeLeTeX}{D\kern-.09em%
+        {\sbox\z@ T%
+         \vbox to\ht\z@{\hbox{\check@mathfonts
+                              \fontsize\sf@size\z@
+                              \math@fontsfalse\selectfont
+                              E}%
+                        \vss}%
+        }%
+	L\kern-.18em%
+	{\sbox\z@ T%
+         \vbox to\ht\z@{\hbox{\check@mathfonts
+                              \fontsize\sf@size\z@
+                              \math@fontsfalse\selectfont
+                              E}%
+                        \vss}%
+        }%
+        \kern-.15em%
+        \TeX}
+
+%
+% produz o Brasao do Servico Publico Federal; o parametro opcional e' um
+% fator de escala
+%
+% ex.:
+%       \spfshield           % tamanho normal (fonte equiv. a 10pt)
+%       \spfshield[2]        % com o dobro do tamanho
+%       \spfshield[.5]       % com metade do tamanho
+%
+\DeclareRobustCommand{\spfshield}[1][1]{
+        \includegraphics[scale=#1]{brasao_spf.eps}
+}
+
+%
+% produz o Brasao da UFRGS; o parametro opcional e' um
+% fator de escala
+%
+% ex.:
+%       \ufrgsshield         % tamanho normal (fonte equiv. a 10pt)
+%       \ufrgsshield[2]      % com o dobro do tamanho
+%       \ufrgsshield[.5]     % com metade do tamanho
+%
+\DeclareRobustCommand{\ufrgsshield}[1][1]{
+        \includegraphics[scale=#1]{brasao_ufrgs.eps}
+}
+
+%
+% produz o logo da UFRGS; o parametro opcional e' um
+% fator de escala
+%
+% ex.:
+%       \ufrgslogo         % tamanho normal (fonte equiv. a 10pt)
+%       \ufrgslogo[2]      % com o dobro do tamanho
+%       \ufrgslogo[.5]     % com metade do tamanho
+%
+\DeclareRobustCommand{\ufrgslogo}[1][1]{
+        \includegraphics[scale=#1]{logo_ufrgs.eps}
+}
+
+%
+% produz o logotipo da Escola; o parametro opcional e' um
+% fator de escala
+%
+% ex.:
+%       \eelogo         % tamanho normal (fonte equiv. a 10pt)
+%       \eelogo[2]      % com o dobro do tamanho
+%       \eelogo[.5]     % com metade do tamanho
+%
+\DeclareRobustCommand{\eelogo}[1][1]{
+        \includegraphics[scale=#1]{brasao_ee.eps}
+}
+
+%
+% produz o logotipo do PPGEE; o parametro opcional e' um
+% fator de escala
+%
+% ex.:
+%       \ppgeelogo         % tamanho normal (fonte equiv. a 10pt)
+%       \ppgeelogo[2]      % com o dobro do tamanho
+%       \ppgeelogo[.5]     % com metade do tamanho
+%
+\DeclareRobustCommand{\ppgeelogo}[1][1]{
+        \includegraphics[scale=#1]{ppgeelogo.eps}
+}
+
+%
+% produz o logotipo do IM; o parametro opcional e' um
+% fator de escala
+%
+% ex.:
+%       \ppgeelogo         % tamanho normal (fonte equiv. a 10pt)
+%       \ppgeelogo[2]      % com o dobro do tamanho
+%       \ppgeelogo[.5]     % com metade do tamanho
+%
+\DeclareRobustCommand{\imlogo}[1][1]{
+        \includegraphics[scale=#1]{logo_im.eps}
+}

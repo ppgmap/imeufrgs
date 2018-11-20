@@ -11,8 +11,8 @@ DEFAULT_INSTALLDIR = $(shell kpsewhich -var-value=TEXMFHOME)
 # USER CONFIG
 INSTALLDIR = $(DEFAULT_INSTALLDIR)
 
-INPUTS = $(INSTALLDIR)/tex/latex/iiufrgs
-DOC = $(INSTALLDIR)/doc/latex/iiufrgs
+INPUTS = $(INSTALLDIR)/tex/latex/imeufrgs
+DOC = $(INSTALLDIR)/doc/latex/imeufrgs
 BIB = $(INSTALLDIR)/bibtex/bst
 
 all:
@@ -29,7 +29,7 @@ all:
 install:
 	install -d $(INPUTS) $(DOC) $(BIB)
 	cp -R inputs/* $(INPUTS)
-	cp README.org COPYING CHANGELOG $(DOC)
+	cp README.org COPYING $(DOC)
 	@echo
 	@echo "Arquivos instalados com sucesso em $(INSTALLDIR)."
 	@echo
@@ -38,6 +38,6 @@ install:
 	@echo
 	@echo "Bom trabalho. ;-)"
 
-add_to_latex_default_path: $(INSTALLDIR)/tex/latex/iiufrgs
-	ln -sf $(INSTALLDIR)/tex/latex/iiufrgs /usr/local/share/texmf/tex/latex/
+add_to_latex_default_path: $(INSTALLDIR)/tex/latex/imeufrgs
+	ln -sf $(INSTALLDIR)/tex/latex/imeufrgs /usr/local/share/texmf/tex/latex/
 	mktexlsr

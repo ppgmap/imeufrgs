@@ -13,6 +13,7 @@
 % and redistributing these files
 %
 \@namedef{captionsbrazilian}{%
+	\def\phonename{Telefone}%
 	\def\bibname{Refer{\^e}ncias}%
 	\def\abstractname{Resumo}%
 	\def\appendixname{Ap{\^e}ndice}%
@@ -43,8 +44,11 @@
 	\def\cipcaption{CIP --- CATALOGA{\c{C}}{\~A}O NA PUBLICA{\c{C}}{\~A}O}%
 	\def\byname{por}%
 	\def\dissname{Disserta{\c{c}}{\~a}o (mestrado)}%
-        \def\pgmicroTitulacaoEm{Microeletr{\^o}nica}
-        \def\ppgcTitulacaoEm{Ci{\^e}ncia da Computa{\c{c}}{\~a}o}
+        \def\ppgmapTitulacaoEm{Matem{\'a}tica Aplicada}
+        \def\ppgmatTitulacaoEm{Matem{\'a}tica}
+        \def\ppgestTitulacaoEm{Estat{\'i}stica}
+        \def\matTitulacaoEm{Matem{\'a}tica}
+        \def\estTitulacaoEm{Estat{\'i}stica}
 	\def\dissspecificinfo{%
 		Disserta{\c{c}}{\~a}o apresentada como requisito parcial
 		para a obten{\c{c}}{\~a}o do grau de
@@ -83,5 +87,5 @@
 			outubro\or novembro\or dezembro%
 		\fi%
 	}%
-	\def\ii@date{\@publyear}%
+	\def\ime@date{\@publyear}%
 }

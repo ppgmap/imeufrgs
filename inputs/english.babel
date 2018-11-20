@@ -13,6 +13,7 @@
 % and redistributing these files
 %
 \@namedef{captionsenglish}{%
+	\def\phonename{Phone}%
 	\def\bibname{References}%
 	\def\abstractname{Abstract}%
 	\def\appendixname{Appendix}%
@@ -43,8 +44,9 @@
 	\def\cipcaption{CIP --- CATALOGING-IN-PUBLICATION}%
 	\def\byname{by}%
 	\def\dissname{Thesis (Master)}%
-        \def\pgmicroTitulacaoEm{Microeletronics}
-        \def\ppgcTitulacaoEm{Computer Science}
+        \def\ppgmapTitulacaoEm{Applied Mathematics}
+        \def\ppfmatTitulacaoEm{Mathematics}
+        \def\ppgestTitulacaoEm{Statistics}
 	\def\dissspecificinfo{%
 		Thesis presented in partial fulfillment\\
 		of the requirements for the degree of\\
@@ -84,5 +86,5 @@
 			October\or November\or December%
 		\fi%
 	}%
-	\def\ii@date{\@publmonth~\@publyear}%
+	\def\ime@date{\@publmonth~\@publyear}%
 }
